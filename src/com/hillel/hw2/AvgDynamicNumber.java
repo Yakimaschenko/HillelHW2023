@@ -1,4 +1,4 @@
-package src.com.hillel.HW2;
+package src.com.hillel.hw2;
 
 import java.util.Scanner;
 

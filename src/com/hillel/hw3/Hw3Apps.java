@@ -1,5 +1,6 @@
 package src.com.hillel.hw3;
 
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class Hw3Apps {
@@ -83,7 +84,16 @@ public class Hw3Apps {
     }
 
 //6.Вивести 10 перших чисел послідовності 0, -5,-10,-15.
+    public void listNum(){
+        int col = 10;
+        int numFrom = 0;
+        int numTo = -5;
 
+        for (int i = 0; i < col; i++){
+            System.out.println(numFrom);
+            numFrom = numFrom + numTo;
+        }
+    }
 
 // 7.Необхідно вивести на екран таблицю множення на Х: (будь-яке число, що вводиться з консолі)
     public void multiplicationTable(){
@@ -104,10 +114,79 @@ public class Hw3Apps {
     }
 
 //8.  Створіть масив, що містить 10 перших непарних чисел. Виведіть елементи масиву на консоль в один рядок, розділяючи комою.
-//9.  Даний масив розмірності N, знайти найменший елемент масиву і вивести на консоль
-//10. У масиві із завдання 9. Визначити найбільший елемент.
-//11. Поміняти максимальний і найменший елементи масиву місцями. Приклад: дано масив {4, -5, 0, 6, 8}. Після заміни виглядатиме {4, 8, 0, 6, -5}.
+    public  void CreateMassivNeParnyh(){
+        int[] mass = new int[10]; // {0, 0, 0, 0, 0}
+        int firstNum = 1;
 
+
+        for (int i = 0; i < mass.length; i++) { //
+            mass[i] = firstNum;
+            firstNum = firstNum + 2;
+        }
+
+        for(int i = 0; i < mass.length; i++){
+            System.out.print(mass[i]);
+            if(i < mass.length - 1) {
+                System.out.print(", ");
+            }
+        }
+    }
+
+//9.  Даний масив розмірності N, знайти найменший елемент масиву і вивести на консоль
+    public static int minNumberMass(int[] mass){
+        int min = mass[0];
+
+        for( int i = 0; i < mass.length; i++){
+            if(mass[i]< min){
+                min = mass[i];
+                }
+            }
+        return min;
+    }
+
+//10. У масиві із завдання 9. Визначити найбільший елемент.
+public static int maxNumberMass(int[] mass){
+    int max = mass[0];
+
+    for( int i = 0; i < mass.length; i++){
+        if(mass[i]> max){
+            max = mass[i];
+        }
+    }
+    return max;
+}
+//11. Поміняти максимальний і найменший елементи масиву місцями. Приклад: дано масив {4, -5, 0, 6, 8}. Після заміни виглядатиме {4, 8, 0, 6, -5}.
+public  static void ChangeMassMinToMax(int[] mass){
+
+    int minNum = 0;
+    int maxNum = 0;
+
+    for (int i = 1; i < mass.length; i++) {
+        if (mass[i] > mass[maxNum]) {
+            maxNum = i;
+        }
+        if (mass[i] < mass[minNum]) {
+            minNum = i;
+        }
+    }
+
+    int temp = mass[maxNum];
+    mass[maxNum] = mass[minNum];
+    mass[minNum] = temp;
+
+//        return temp;
+    for (int i = 0; i < mass.length; i++) {
+        System.out.print(mass[i]);
+        if (i < mass.length - 1) {
+            System.out.print(", ");
+        }
+    }
+}
+    public static void PrintMass(int[] mass){
+        for (int i = 0; i < mass.length; i++){
+            System.out.print(mass[i] + ", ");
+        }
+    }
 
 }
 

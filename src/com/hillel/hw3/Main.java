@@ -36,9 +36,42 @@ public class Main {
         hw.degreeMultiplication(3, 4);
 
 //6.Вивести 10 перших чисел послідовності 0, -5,-10,-15.
+        System.out.println("\n" + "-----task_6");
+        hw.listNum();
 
 // 7.Необхідно вивести на екран таблицю множення на Х: (будь-яке число, що вводиться з консолі)
         System.out.println("\n" + "-----task_7");
         hw.multiplicationTable();
+
+//8.  Створіть масив, що містить 10 перших непарних чисел. Виведіть елементи масиву на консоль в один рядок, розділяючи комою.
+        System.out.println("\n" + "-----task_8");
+        hw.CreateMassivNeParnyh();
+        System.out.println();
+
+//9.  Даний масив розмірності N, знайти найменший елемент масиву і вивести на консоль
+        System.out.println("\n" + "-----task_9");
+        int [] mass = {4,2,5,6,8,1,10};
+        int min = hw.minNumberMass(mass);
+
+        System.out.println("Минимальный элемент массива: " + min);
+
+//10. У масиві із завдання 9. Визначити найбільший елемент.
+        System.out.println("\n" + "-----task_10");
+        int max = hw.maxNumberMass(mass);
+
+        System.out.println("Максимальный элемент массива: " + max);
+
+//11. Поміняти максимальний і найменший елементи масиву місцями. Приклад: дано масив {4, -5, 0, 6, 8}.
+//    Після заміни виглядатиме {4, 8, 0, 6, -5}.
+        System.out.println("\n" + "-----task_11");
+
+        System.out.println("Начальный массив: ");
+        hw.PrintMass(mass);
+        System.out.println();
+
+        System.out.println("Массив с измененными минимальным и максимальным элементами: ");
+        hw.ChangeMassMinToMax(mass);
+        System.out.println();
+
     }
 }

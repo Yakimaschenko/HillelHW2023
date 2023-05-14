@@ -11,6 +11,8 @@ public class Car {
     int fromZhashkivToKiev = 150;
     int costFuelAzs = 51;
     int allRoute;
+//    private Integer ALLROUTE;
+//    private final int FUELCONSUMTION = 10;
 
     public Car() {
     }

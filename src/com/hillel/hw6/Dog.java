@@ -19,7 +19,7 @@ public class Dog extends Animal{
         if(maxDistanceSwimm >= distance){
             System.out.println(name + " проплыл - " + maxDistanceSwimm + " м.");
         }else{
-            System.out.println("к сожалению "+ name+ " не может столько проплыть...");
+            System.out.println("к сожалению "+ name+ " не может столько проплыть..." +"("+distance +" м.)");
         }
     }
 
@@ -27,7 +27,12 @@ public class Dog extends Animal{
         if(distance > 0){
             System.out.println(name + " пробежал - " + distance + " м.");
         }else{
-            System.out.println("к сожалению "+ name+ " не может столько пробежать...");
+            System.out.println("к сожалению "+ name+ " не может столько пробежать..." +"("+distance +" м.)");
         }
+    }
+
+    public static int getDogCol() {
+        return dogCol;
+
     }
 }

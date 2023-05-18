@@ -30,10 +30,10 @@ public class Animal {
         }
     }
 
-    public int getAnimalCol() {
-        return animalCol;
-
-    }
+//    public static int getAnimalCol() {
+//        return animalCol;
+//
+//    }
 
 
 }

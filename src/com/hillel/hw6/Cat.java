@@ -14,18 +14,24 @@ public class Cat extends Animal{
         catCol++;
     }
     public Cat() {
+        catCol++;
     }
 
     @Override
     public void swimm(String name, int maxDistanceSwimm){
-            System.out.println("к сожалению я не умею плавать...");
+            System.out.println(name+ ": "+" к сожалению я не умею плавать...");
     }
 
     public void ran(String name,int distance){
         if(distance > 0){
             System.out.println(name + " пробежал - " + distance + " м.");
         }else{
-            System.out.println("к сожалению "+ name+ " не может столько пробежать...");
+            System.out.println("к сожалению "+ name+ " не может столько пробежать..." +"("+distance +" м.)");
         }
+    }
+
+        public static int getCatCol() {
+        return catCol;
+
     }
 }

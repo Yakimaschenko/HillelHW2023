@@ -21,11 +21,20 @@ public class ArrayListInf {
         size = 0;
     }
 
+    private void resizeArray() {
+        String[] newArray = new String[array.length * 2];
+        System.arraycopy(array, 0, newArray, 0, array.length);
+        array = newArray;
+    }
+
 
     //1. boolean add(int index, String value);
     public boolean add(int index, String value) {
         if (index < 0 || index > size) {
             return false;
+        }
+        if (size == array.length) {
+            resizeArray();
         }
 
         // Сдвигаю вправо

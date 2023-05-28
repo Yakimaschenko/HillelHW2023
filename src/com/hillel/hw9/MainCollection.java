@@ -38,5 +38,11 @@ public class MainCollection {
         System.out.println(collection.equals("Hillel"));
 
 
+
+
+
+
+
+
     }
 }

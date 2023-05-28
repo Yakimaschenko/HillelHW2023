@@ -19,7 +19,9 @@ public class CollectionImpl implements Collection{
     @Override
     public void resizeArray() {
         String[] newArray = new String[array.length * 2];
-        System.arraycopy(array, 0, newArray, 0, array.length);
+        coppyMassiv(array,newArray);
+//        System.arraycopy(array, 0, newArray, 0, array.length);
+
         array = newArray;
     }
 
@@ -51,7 +53,8 @@ public class CollectionImpl implements Collection{
     public boolean delete(String value) {
         for (int i = 0; i < size; i++) {
             if (array[i].equalsIgnoreCase(value)) {
-               System.arraycopy(array,i + 1, array, i,size - i - 1);
+//                coppyMassiv(array,newArray);
+                System.arraycopy(array,i + 1, array, i,size - i - 1);
                array[size - 1] = null;
                size--;
                 return true;
@@ -102,4 +105,12 @@ public class CollectionImpl implements Collection{
     public int size() {
         return size;
     }
+
+    @Override
+    public void coppyMassiv(String[] basic, String[] next) {
+        for(int i = 0; i < basic.length; i++){
+            basic[i] = next[i];
+        }
+    }
+
 }

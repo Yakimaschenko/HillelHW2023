@@ -19,4 +19,7 @@ public interface Collection {
     int size(); // - количество элементов которые добавили
 
     public void resizeArray();
+
+    public void coppyMassiv(String[] basic, String[] next);
+
 }

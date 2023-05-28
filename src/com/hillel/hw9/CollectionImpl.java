@@ -6,6 +6,11 @@ public class CollectionImpl implements Collection{
     private String[] array;
     private int size;
 
+    public CollectionImpl() {
+        array = new String[10];
+        size = 0;
+    }
+
     public CollectionImpl(String[] array, int size) {
         this.array = array;
         this.size = size;
@@ -45,12 +50,16 @@ public class CollectionImpl implements Collection{
     @Override
     public boolean delete(String value) {
         for (int i = 0; i < size; i++) {
-            if (array[i] != null && array[i].equals(value)) {
-                return delete(String.valueOf(i));
+            if (array[i].equalsIgnoreCase(value)) {
+               System.arraycopy(array,i + 1, array, i,size - i - 1);
+               array[size - 1] = null;
+               size--;
+                return true;
             }
         }
         return false;
     }
+
     @Override
     public String get(int index) {
         if (index < 0 || index >= size) {
@@ -61,11 +70,22 @@ public class CollectionImpl implements Collection{
 
     @Override
     public boolean contain(String value) {
+        for(int i = 0; i < size;i++){
+            if(array[i].equalsIgnoreCase(value)){
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public boolean equals(Collection str) {
+        CollectionImpl newCollection = (CollectionImpl) str;
+        for(int i = 0; i < size; i++){
+            if(array[i].equalsIgnoreCase(newCollection.array[i])){
+                return true;
+            }
+        }
         return false;
     }
 

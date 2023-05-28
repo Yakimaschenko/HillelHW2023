@@ -10,7 +10,7 @@ public interface Collection {
 
     String get(int index);
 
-    boolean contain(String o);
+    boolean contain(String value);
 
     boolean equals (Collection str);
 

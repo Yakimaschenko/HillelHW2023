@@ -31,6 +31,8 @@ public class MainFirstPart {
 
         System.out.println("------------");
 
+//        System.out.println(firstPart.getRandomWord(list));
+
 
 
 

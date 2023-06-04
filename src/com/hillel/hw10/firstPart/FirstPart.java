@@ -56,5 +56,8 @@ public class FirstPart {
         }
 
     }
+        public String getRandomWord(List<String> words){
+            return words.get((int) (Math.random()*10));
+        }
 
 }

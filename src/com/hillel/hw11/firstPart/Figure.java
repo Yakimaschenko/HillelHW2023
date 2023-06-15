@@ -4,10 +4,10 @@ public interface Figure {
 
     double getArea();
     public static double calculateTotalArea(Figure[] figures) {
-        double totalArea = 0.0;
+        double sumlArea = 0.0;
         for (Figure figure : figures) {
-            totalArea += figure.getArea();
+            sumlArea += figure.getArea();
         }
-        return totalArea;
+        return sumlArea;
     }
 }

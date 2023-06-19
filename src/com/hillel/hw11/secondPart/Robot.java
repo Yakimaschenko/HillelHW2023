@@ -1,21 +1,7 @@
 package src.com.hillel.hw11.secondPart;
 
-public class Robot implements Participant{
-    Integer runDistance;
-    Integer jumpDistance;
-
-    public Robot(Integer runDistance, Integer jumpDistance) {
-        this.runDistance = runDistance;
-        this.jumpDistance = jumpDistance;
-    }
-
-    @Override
-    public int running() {
-        return 0;
-    }
-
-    @Override
-    public int jumping() {
-        return 0;
+public class Robot extends Participant{
+    public Robot(String name, int maxRunDistance, int maxJumpHeight) {
+        super(name, maxRunDistance, maxJumpHeight);
     }
 }

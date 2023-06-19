@@ -1,4 +1,5 @@
 package src.com.hillel.hw11.secondPart;
 
-public interface Obstacle {
+abstract class Obstacle {
+    public abstract void overcome(Participant participant);
 }

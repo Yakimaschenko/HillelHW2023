@@ -17,21 +17,6 @@ public class MainExample {
 
         };
 
-//        for (Participant participant : participants) {
-//            boolean isFailed = false;
-//
-//            for (Obstacle obstacle : obstacles) {
-//                obstacle.overcome(participant);
-//                if (participant instanceof Participant){// && (participant.jumping() || participant.)){
-//                isFailed = true;
-//                break;
-//                }
-//            }
-//
-//            if (!isFailed){
-//                System.out.println("Учасник "+ participant.getName() + " пройшов перешкоди");
-//            }
-//        }
         for(Participant participant : participants){
             for(Obstacle obstacle : obstacles){
                 obstacle.overcome(participant);

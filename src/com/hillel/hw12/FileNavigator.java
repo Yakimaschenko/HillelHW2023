@@ -1,9 +1,6 @@
 package src.com.hillel.hw12;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class FileNavigator {
 
@@ -20,6 +17,12 @@ public class FileNavigator {
         fileList.add(file);
         fileMap.put(path, fileList);
     }
+//      public void add(FileData file) {
+//        if(fileMap.containsKey(file.getPath())){
+//            fileMap.put(file.getPath(), new ArrayList<>());
+//        }
+//        List<FileData> files = fileMap.get(file.getPath());
+//    }
 
 //3. Реалізувати метод find у класі FileNavigator.
     public List<FileData> find(String path) {
@@ -50,7 +53,7 @@ public List<FileData> sortBySize() {
     for (List<FileData> fileList : fileMap.values()) {
         allFiles.addAll(fileList);
     }
-    allFiles.sort((file1, file2) -> Long.compare(file1.getSize(), file2.getSize()));
+    allFiles.sort(Comparator.comparingLong(FileData::getSize));
     return allFiles;
 }
 
@@ -69,6 +72,13 @@ public List<FileData> sortBySize() {
             }
         }
         add(file);
+    }
+
+    public void printCollection(){
+//        fileMap.entrySet().iterator();
+        for(String key :fileMap.keySet()){
+            System.out.println(key + ":" +fileMap.get(key));
+        }
     }
 
 

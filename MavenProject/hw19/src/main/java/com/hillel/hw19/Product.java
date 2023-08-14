@@ -1,11 +1,13 @@
 package com.hillel.hw19;
 
+import java.time.LocalDateTime;
+
 public class Product {
 
     private String type;
     private Double price;
     private boolean discountProbably;
-    private String createDate;
+    private LocalDateTime createDate;
 
     public Product() {
     }
@@ -19,6 +21,13 @@ public class Product {
         this.type = type;
         this.price = price;
         this.discountProbably = discountProbably;
+    }
+
+    public Product(String type, Double price, boolean discountProbably, LocalDateTime createDate) {
+        this.type = type;
+        this.price = price;
+        this.discountProbably = discountProbably;
+        this.createDate = createDate;
     }
 
     public String getType() {
@@ -42,11 +51,11 @@ public class Product {
     }
 
 
-    public String getCreateDate() {
+    public LocalDateTime getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(String createDate) {
+    public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
 

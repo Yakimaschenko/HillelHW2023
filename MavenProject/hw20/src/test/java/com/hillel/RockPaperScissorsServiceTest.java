@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RockPaperScissorsServiceTestTest {
+class RockPaperScissorsServiceTest {
 
     @Test
     public void testdetermineWiner_PlayerWins(){

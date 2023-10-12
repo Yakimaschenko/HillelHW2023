@@ -4,12 +4,11 @@ import java.util.logging.Level;
 
 public class FileLoggerConfiguration {
     private String path; // ../result.log
-    private Level level;
+    private LoginLevel level;
     private Integer maxFileSize; // in byte
     private String logFormat;
 
-    public FileLoggerConfiguration(String path, Level level, Integer maxFileSize,
-                                   String logFormat) {
+    public FileLoggerConfiguration(String path, LoginLevel level, Integer maxFileSize, String logFormat) {
         this.path = path;
         this.level = level;
         this.maxFileSize = maxFileSize;
@@ -24,11 +23,11 @@ public class FileLoggerConfiguration {
         this.path = path;
     }
 
-    public Level getLevel() {
+    public LoginLevel getLevel() {
         return level;
     }
 
-    public void setLevel(Level level) {
+    public void setLevel(LoginLevel level) {
         this.level = level;
     }
 

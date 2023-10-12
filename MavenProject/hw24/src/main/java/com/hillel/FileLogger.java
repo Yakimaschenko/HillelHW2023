@@ -23,15 +23,11 @@ public class FileLogger {
             }
         }
 
-        // 2 - check level
-        // if level.info -> info, debug
-        // if level.debug -> debug
-
         if (level.equals(LoginLevel.INFO) || level.equals(LoginLevel.DEBUG)) {
 
-            String log = String.format("%s %s Message: %s ", System.currentTimeMillis(), level, message); // time, level, message
+            String log = String.format("%s %s Message: %s \n", DateTransformer.convert(), level, message);
 
-            if (config.getMaxFileSize() > 0 && log.length() > config.getMaxFileSize()) {
+            if (log.length() > config.getMaxFileSize()) {
                 throw new FileMaxSizeReachedException(config.getMaxFileSize(), log.length(), config.getPath());
             }
 
@@ -46,10 +42,5 @@ public class FileLogger {
         }
     }
 
-        // 3 - generate log line by pattern: time level message
-
-        // 4 - check size > more then max size -> FileMaxSizeReachedException
-
-        // 5 -  write to file + shpw in console
     }
 

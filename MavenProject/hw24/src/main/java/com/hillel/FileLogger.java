@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 public class FileLogger {
 
     private FileLoggerConfiguration config;
+    private int logLenght;
 
     public FileLogger(FileLoggerConfiguration config) {
         this.config = config;
@@ -26,8 +27,10 @@ public class FileLogger {
         if (level.equals(LoginLevel.INFO) || level.equals(LoginLevel.DEBUG)) {
 
             String log = String.format("%s %s Message: %s \n", DateTransformer.convert(), level, message);
+            logLenght = log.length() + logLenght;
 
-            if (log.length() > config.getMaxFileSize()) {
+
+            if (logLenght > config.getMaxFileSize()) {
                 throw new FileMaxSizeReachedException(config.getMaxFileSize(), log.length(), config.getPath());
             }
 

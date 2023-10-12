@@ -7,7 +7,7 @@ public class ConverterRun {
 //        System.out.println(DateTransformer.convert());
 
 //        FileLoggerConfiguration fileLoggerConfiguration = new FileLoggerConfiguration("log.txt", Level.INFO, 500,"%s %s Massage: %s");
-        FileLoggerConfiguration fileLoggerConfiguration = new FileLoggerConfiguration("log.txt", LoginLevel.INFO, 100,"%s %s Massage: %s");
+        FileLoggerConfiguration fileLoggerConfiguration = new FileLoggerConfiguration("log.txt", LoginLevel.INFO, 200,"%s %s Massage: %s");
 
         FileLogger fileLogger = new FileLogger(fileLoggerConfiguration);
 
